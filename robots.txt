@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jonathansisnando.github.io/keit-site/sitemap.xml
+Sitemap: https://fisioterapia-domiciliar-manaus.vercel.app/sitemap.xml
