@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fisioterapeutadomicilio.netlify.app/sitemap.xml
+Sitemap: https://jonathansisnando.github.io/keit-site/sitemap.xml
