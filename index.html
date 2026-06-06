@@ -80,38 +80,51 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#inicio" aria-label="Keitiana Paiva">
-        <img class="brand-logo" src="assets/keit-logo-mark.png" alt="" width="760" height="760">
-        <span class="brand-copy">
-          <strong>Keitiana Paiva</strong>
-          <small>Fisioterapeuta</small>
-        </span>
-      </a>
+      <div class="header-inner">
+        <a class="brand" href="#inicio" aria-label="Keitiana Paiva">
+          <img class="brand-logo" src="assets/keit-logo-mark.png" alt="" width="760" height="760">
+          <span class="brand-copy">
+            <strong>Keitiana Paiva</strong>
+            <small>Fisioterapeuta</small>
+          </span>
+        </a>
 
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="#servico">Como funciona</a>
-        <a href="#especialidades">Especialidades</a>
-        <a href="#beneficios">Benefícios</a>
-        <a href="#contato">Contato</a>
-      </nav>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-controls="primary-navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-      <a class="header-whatsapp" href="https://wa.me/5592982362217?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20pr%C3%A9-atendimento%20de%20fisioterapia%20em%20domic%C3%ADlio." target="_blank" rel="noreferrer">
-        WhatsApp
-      </a>
+        <nav id="primary-navigation" class="nav" aria-label="Navegação principal">
+          <div class="nav-links">
+            <a href="#servico">Como funciona</a>
+            <a href="#indicacoes">Indicações</a>
+            <a href="#especialidades">Especialidades</a>
+            <a href="#beneficios">Benefícios</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+          </div>
+
+          <a class="header-whatsapp" href="https://wa.me/5592982362217?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20pr%C3%A9-atendimento%20de%20fisioterapia%20em%20domic%C3%ADlio." target="_blank" rel="noreferrer noopener" aria-label="Agendar avaliação pelo WhatsApp">
+            <img src="assets/icons8-whatsapp-20.png" alt="" width="20" height="20" aria-hidden="true">
+            Agendar avaliação
+          </a>
+        </nav>
+      </div>
     </header>
 
     <main id="inicio">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
           <p class="eyebrow">Fisioterapia domiciliar em Manaus</p>
-          <h1 id="hero-title">Fisioterapia em domicílio para recuperar movimento, autonomia e qualidade de vida.</h1>
+          <h1 id="hero-title">Fisioterapia domiciliar em Manaus com cuidado individualizado no conforto da sua casa</h1>
           <p class="hero-subtitle">
-            Avaliação, tratamento e acompanhamento fisioterapêutico em Manaus no conforto da sua casa,
-            com um plano individualizado para melhorar sua mobilidade, autonomia e bem-estar.
+            Atendimento humanizado para idosos, reabilitação, dores, pós-operatório e recuperação
+            da mobilidade, com avaliação e acompanhamento fisioterapêutico personalizado.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="https://wa.me/5592982362217?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20pr%C3%A9-atendimento%20de%20fisioterapia%20em%20domic%C3%ADlio." target="_blank" rel="noreferrer">
-              Agendar pré-atendimento pelo WhatsApp
+            <a class="button primary" href="https://wa.me/5592982362217?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20pr%C3%A9-atendimento%20de%20fisioterapia%20em%20domic%C3%ADlio." target="_blank" rel="noreferrer noopener" aria-label="Agendar avaliação pelo WhatsApp">
+              Agendar avaliação pelo WhatsApp
             </a>
             <a class="button secondary" href="#servico">Como funciona</a>
           </div>
@@ -131,17 +144,17 @@
           <article>
             <img class="intro-icon" src="assets/resumo-atendimento-1.png" alt="" width="1018" height="1018" loading="lazy" decoding="async">
             <h3>Atendimento humanizado</h3>
-            <p>Cuidado acolhedor, respeitando a história e as necessidades de cada paciente.</p>
+            <p>Cuidado acolhedor, com escuta ativa e participação da família no processo.</p>
           </article>
           <article>
             <img class="intro-icon" src="assets/resumo-atendimento-2.png" alt="" width="987" height="987" loading="lazy" decoding="async">
-            <h3>Tratamento individualizado</h3>
-            <p>Condutas personalizadas para melhorar mobilidade, autonomia e qualidade de vida.</p>
+            <h3>Plano individualizado</h3>
+            <p>Sessões planejadas conforme a condição, rotina e evolução de cada paciente.</p>
           </article>
           <article>
             <img class="intro-icon" src="assets/resumo-atendimento-3.png" alt="" width="913" height="913" loading="lazy" decoding="async">
-            <h3>Recuperação no seu ritmo</h3>
-            <p>Evolução acompanhada de perto, com segurança e orientação em cada etapa.</p>
+            <h3>Orientação segura</h3>
+            <p>Acompanhamento claro, com cuidados práticos para manter a evolução em casa.</p>
           </article>
         </div>
       </section>
@@ -175,10 +188,48 @@
         </div>
       </section>
 
+      <section id="indicacoes" class="section indications-section" aria-labelledby="indications-title">
+        <div class="section-heading center">
+          <p class="eyebrow">Indicações</p>
+          <h2 id="indications-title">Para quem é indicado o atendimento em domicílio?</h2>
+          <p>
+            A fisioterapia domiciliar pode ajudar pessoas que precisam de cuidado próximo,
+            orientação profissional e mais segurança durante a recuperação.
+          </p>
+        </div>
+
+        <div class="indications-grid" aria-label="Situações em que a fisioterapia domiciliar pode ajudar">
+          <article>
+            <span>01</span>
+            <h3>Idosos com dificuldade de locomoção</h3>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Pacientes em recuperação pós-cirúrgica</h3>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Pessoas com dores musculares ou articulares</h3>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Pacientes neurológicos</h3>
+          </article>
+          <article>
+            <span>05</span>
+            <h3>Prevenção de quedas</h3>
+          </article>
+          <article>
+            <span>06</span>
+            <h3>Fortalecimento, equilíbrio e mobilidade</h3>
+          </article>
+        </div>
+      </section>
+
       <section id="especialidades" class="section specialty-section">
         <div class="section-heading center">
           <p class="eyebrow">02 | Especialidades</p>
-          <h2>Para quem é indicada a fisioterapia em domicílio?</h2>
+          <h2>Áreas de atendimento</h2>
           <p>
             O cuidado é indicado para pessoas que precisam de reabilitação, prevenção,
             fortalecimento, ganho de mobilidade ou mais autonomia nas atividades diárias.
@@ -208,54 +259,84 @@
         <div class="section-heading center">
           <h2 id="benefits-title">Benefícios da fisioterapia em domicílio</h2>
           <p>
-            O atendimento em casa garante mais conforto, conveniência e segurança
-            para o paciente durante o processo de recuperação.
+            Atendimento no ambiente familiar, com mais conforto, orientação e praticidade
+            para o paciente e sua família.
           </p>
         </div>
 
         <div class="benefits-grid">
           <article class="benefit-card">
             <img class="benefit-icon-img" src="assets/beneficio-1.png" alt="" width="912" height="912" loading="lazy" decoding="async">
-            <h3>Mais acolhimento ao paciente</h3>
-            <p>Participação da família durante todo o processo de tratamento.</p>
+            <h3>Atendimento humanizado</h3>
+            <p>Cuidado acolhedor, com escuta ativa e participação da família no processo.</p>
           </article>
           <article class="benefit-card featured">
             <img class="benefit-icon-img" src="assets/beneficio-2.png" alt="" width="795" height="795" loading="lazy" decoding="async">
-            <h3>Atendimento individualizado</h3>
-            <p>Cuidado adaptado às necessidades e objetivos de cada paciente.</p>
+            <h3>Plano individualizado</h3>
+            <p>Sessões planejadas conforme a condição, rotina e evolução de cada paciente.</p>
           </article>
           <article class="benefit-card">
             <img class="benefit-icon-img" src="assets/beneficio-3.png" alt="" width="874" height="874" loading="lazy" decoding="async">
-            <h3>Mais proteção e segurança</h3>
-            <p>Menor exposição a ambientes externos e mais tranquilidade em casa.</p>
+            <h3>Mais segurança em casa</h3>
+            <p>Reduz a exposição a ambientes externos e oferece mais tranquilidade ao paciente.</p>
           </article>
           <article class="benefit-card featured">
             <img class="benefit-icon-img" src="assets/beneficio-4.png" alt="" width="1119" height="1119" loading="lazy" decoding="async">
-            <h3>Sem deslocamentos</h3>
-            <p>Sem trânsito, salas de espera ou perda de tempo com locomoção.</p>
+            <h3>Sem deslocamento</h3>
+            <p>O atendimento vai até você, evitando trânsito, espera e esforço desnecessário.</p>
           </article>
           <article class="benefit-card">
             <img class="benefit-icon-img" src="assets/beneficio-5.png" alt="" width="809" height="809" loading="lazy" decoding="async">
             <h3>Horários mais flexíveis</h3>
-            <p>Mais facilidade para encaixar as sessões na rotina.</p>
+            <p>Mais facilidade para adaptar as sessões à rotina do paciente e da família.</p>
           </article>
           <article class="benefit-card featured">
             <img class="benefit-icon-img" src="assets/beneficio-6.png" alt="" width="942" height="942" loading="lazy" decoding="async">
-            <h3>Conforto em casa</h3>
-            <p>Tratamento realizado no ambiente familiar, com mais praticidade.</p>
-          </article>
-          <article class="benefit-card">
-            <img class="benefit-icon-img" src="assets/beneficio-7.png" alt="" width="781" height="781" loading="lazy" decoding="async">
-            <h3>Orientações para a rotina</h3>
-            <p>Exercícios e cuidados simples para o dia a dia.</p>
-          </article>
-          <article class="benefit-card featured">
-            <img class="benefit-icon-img" src="assets/beneficio-8.png" alt="" width="960" height="960" loading="lazy" decoding="async">
-            <h3>Foco na evolução</h3>
-            <p>Acompanhamento próximo para melhorar a recuperação do paciente.</p>
+            <h3>Orientações práticas</h3>
+            <p>Exercícios e cuidados simples para manter a evolução entre as sessões.</p>
           </article>
         </div>
       </section>
+
+      <section class="section trust-section" aria-labelledby="trust-title">
+        <div class="trust-content">
+          <div>
+            <p class="eyebrow">Cuidado e segurança</p>
+            <h2 id="trust-title">Cuidado profissional no conforto da sua casa</h2>
+            <p>
+              Atendimento domiciliar com avaliação individualizada, orientação ao paciente
+              e participação da família durante o processo de recuperação.
+            </p>
+          </div>
+          <ul class="trust-cards" aria-label="Pontos de confiança do atendimento">
+            <li>Atendimento humanizado</li>
+            <li>Plano de cuidado individualizado</li>
+            <li>Orientações para paciente e familiares</li>
+            <li>Foco em mobilidade, autonomia e segurança</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="sobre" class="section about-section" aria-labelledby="about-title">
+        <div class="about-visual" aria-hidden="true">
+          <img src="assets/keit-logo-mark.png" alt="" width="760" height="760" loading="lazy" decoding="async">
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">Sobre a fisioterapeuta</p>
+          <h2 id="about-title">Keitiana Paiva</h2>
+          <p>
+            Fisioterapeuta com atuação em atendimento domiciliar em Manaus, oferecendo
+            avaliação, acompanhamento e orientações voltadas à rotina do paciente.
+          </p>
+          <p>
+            O cuidado é conduzido de forma individualizada, respeitando as necessidades
+            do paciente e buscando mais mobilidade, autonomia e segurança no dia a dia.
+          </p>
+          <!-- Inserir CREFITO aqui quando o registro profissional for confirmado. -->
+        </div>
+      </section>
+
+      <!-- Depoimentos em stand by: renderizar esta seção somente quando houver relatos reais de pacientes. -->
 
       <section class="section faq-section" aria-labelledby="faq-title">
         <div class="section-heading center">
@@ -283,35 +364,35 @@
           </details>
           <details>
             <summary>Como faço para agendar?</summary>
-            <p>Basta entrar em contato pelo WhatsApp, explicar sua necessidade e combinar o melhor horário para o pré-atendimento ou avaliação.</p>
+            <p>Basta entrar em contato pelo WhatsApp, explicar sua necessidade e combinar o melhor horário para a avaliação.</p>
           </details>
         </div>
       </section>
 
       <section id="contato" class="section contact-section">
-        <div class="contact-panel">
-          <strong>Agende seu atendimento</strong>
-          <a class="phone" href="https://wa.me/5592982362217?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20pr%C3%A9-atendimento%20de%20fisioterapia%20em%20domic%C3%ADlio." target="_blank" rel="noreferrer">
-            (92) 98236-2217
-          </a>
-          <a class="button primary full" href="https://wa.me/5592982362217?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20pr%C3%A9-atendimento%20de%20fisioterapia%20em%20domic%C3%ADlio." target="_blank" rel="noreferrer">
-            Conversar no WhatsApp agora
-          </a>
-        </div>
-
         <div class="contact-copy">
           <p class="eyebrow">03 | Contato</p>
-          <h2>Pronto para iniciar seu cuidado em casa?</h2>
+          <h2>Pronto para cuidar da sua recuperação em casa?</h2>
           <p>
-            Fale pelo WhatsApp, explique sua necessidade e receba orientação
-            sobre o melhor caminho para sua recuperação.
+            Fale pelo WhatsApp e agende sua avaliação. Explique sua necessidade
+            para receber orientação sobre o melhor caminho para o seu cuidado.
           </p>
           <ul class="trust-list" aria-label="Pontos de confiança">
             <li>Atendimento em Manaus e região</li>
-            <li>Pré-atendimento pelo WhatsApp</li>
+            <li>Agendamento pelo WhatsApp</li>
             <li>Plano individualizado após avaliação</li>
             <li>Orientações para paciente e familiares</li>
           </ul>
+        </div>
+
+        <div class="contact-panel">
+          <strong>Agende seu atendimento</strong>
+          <a class="phone" href="https://wa.me/5592982362217?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20pr%C3%A9-atendimento%20de%20fisioterapia%20em%20domic%C3%ADlio." target="_blank" rel="noreferrer noopener" aria-label="Falar com a fisioterapeuta pelo WhatsApp no número 92 98236-2217">
+            (92) 98236-2217
+          </a>
+          <a class="button primary full" href="https://wa.me/5592982362217?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20pr%C3%A9-atendimento%20de%20fisioterapia%20em%20domic%C3%ADlio." target="_blank" rel="noreferrer noopener" aria-label="Agendar avaliação pelo WhatsApp">
+            Falar com a fisioterapeuta agora
+          </a>
         </div>
       </section>
     </main>
@@ -319,19 +400,44 @@
     <footer class="site-footer">
       <div>
         <strong>Keitiana Paiva - Fisioterapeuta</strong>
-        <span>CREFITO: a inserir</span>
+        <span>CREFITO: 457893-F</span>
       </div>
       <nav class="footer-links" aria-label="Links rápidos">
         <a href="#servico">Como funciona</a>
+        <a href="#indicacoes">Indicações</a>
         <a href="#especialidades">Especialidades</a>
         <a href="#beneficios">Benefícios</a>
+        <a href="#sobre">Sobre</a>
         <a href="#contato">Contato</a>
       </nav>
-      <a href="https://wa.me/5592982362217?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20pr%C3%A9-atendimento%20de%20fisioterapia%20em%20domic%C3%ADlio." target="_blank" rel="noreferrer">WhatsApp: (92) 98236-2217</a>
+      <a href="https://wa.me/5592982362217?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20pr%C3%A9-atendimento%20de%20fisioterapia%20em%20domic%C3%ADlio." target="_blank" rel="noreferrer noopener">WhatsApp: (92) 98236-2217</a>
     </footer>
 
-    <a class="floating-whatsapp" href="https://wa.me/5592982362217?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20pr%C3%A9-atendimento%20de%20fisioterapia%20em%20domic%C3%ADlio." target="_blank" rel="noreferrer" aria-label="Conversar no WhatsApp">
-      WhatsApp
+    <a class="floating-whatsapp" href="https://wa.me/5592982362217?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20pr%C3%A9-atendimento%20de%20fisioterapia%20em%20domic%C3%ADlio." target="_blank" rel="noreferrer noopener" aria-label="Agendar pelo WhatsApp">
+      Agendar pelo WhatsApp
     </a>
+    <script>
+      const siteHeader = document.querySelector(".site-header");
+      const menuToggle = document.querySelector(".menu-toggle");
+      const primaryNavigation = document.querySelector("#primary-navigation");
+
+      if (siteHeader && menuToggle && primaryNavigation) {
+        const closeMenu = () => {
+          siteHeader.classList.remove("is-menu-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.setAttribute("aria-label", "Abrir menu de navegação");
+        };
+
+        menuToggle.addEventListener("click", () => {
+          const isOpen = siteHeader.classList.toggle("is-menu-open");
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+          menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu de navegação" : "Abrir menu de navegação");
+        });
+
+        primaryNavigation.querySelectorAll('a[href^="#"]').forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+      }
+    </script>
   </body>
 </html>

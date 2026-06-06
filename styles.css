@@ -35,6 +35,13 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid rgba(4, 133, 125, 0.55);
+  outline-offset: 3px;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -44,14 +51,20 @@ img {
   position: sticky;
   top: 0;
   z-index: 20;
-  display: grid;
-  grid-template-columns: minmax(220px, 1fr) auto auto;
-  gap: 18px;
-  align-items: center;
-  padding: 12px clamp(18px, 4vw, 70px);
-  border-bottom: 1px solid rgba(5, 43, 99, 0.1);
-  background: rgba(255, 255, 255, 0.95);
+  padding: 10px clamp(14px, 3vw, 36px);
+  border-bottom: 1px solid rgba(5, 43, 99, 0.08);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(5, 43, 99, 0.07);
+}
+
+.header-inner {
+  display: flex;
+  gap: clamp(18px, 2.5vw, 32px);
+  align-items: center;
+  justify-content: space-between;
+  width: min(1180px, 100%);
+  margin: 0 auto;
 }
 
 .brand {
@@ -63,8 +76,8 @@ img {
 
 .brand-logo {
   display: block;
-  width: 58px;
-  height: 58px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
   object-position: center;
 }
@@ -92,47 +105,107 @@ img {
   text-transform: uppercase;
 }
 
-.nav,
-.footer-links {
+.nav {
+  flex: 1 1 auto;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(14px, 1.8vw, 24px);
+  min-width: 0;
 }
 
-.nav a,
+.nav-links,
+.footer-links {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: clamp(4px, 0.75vw, 10px);
+}
+
+.nav-links a,
 .header-whatsapp {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
-  padding: 9px 12px;
+  min-height: 42px;
+  padding: 8px 10px;
   font-size: 0.84rem;
   font-weight: 800;
-  border-radius: 8px;
+  border-radius: 10px;
+  white-space: nowrap;
 }
 
-.nav a {
+.nav-links a {
   color: var(--navy);
+  transition: color 160ms ease, background 160ms ease;
 }
 
-.nav a:hover,
-.nav a:focus-visible {
-  color: #fff;
-  background: var(--navy);
-  outline: none;
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--teal);
+  background: rgba(217, 241, 238, 0.48);
 }
 
 .header-whatsapp {
+  gap: 8px;
+  flex: 0 0 auto;
+  min-width: 172px;
+  min-height: 44px;
+  padding: 10px 16px;
   color: #fff;
   background: var(--teal);
-  box-shadow: 0 10px 22px rgba(4, 133, 125, 0.22);
+  box-shadow: 0 13px 28px rgba(4, 133, 125, 0.26);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.header-whatsapp img {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
 }
 
 .header-whatsapp:hover,
 .header-whatsapp:focus-visible {
   background: var(--teal-dark);
-  outline: none;
+  box-shadow: 0 18px 38px rgba(4, 133, 125, 0.32);
+  transform: translateY(-1px);
+}
+
+.menu-toggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0;
+  color: var(--teal);
+  background: #fff;
+  border: 1px solid rgba(4, 133, 125, 0.22);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(5, 43, 99, 0.08);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.site-header.is-menu-open .menu-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-header.is-menu-open .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header.is-menu-open .menu-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .hero {
@@ -253,7 +326,6 @@ p {
 .button:hover,
 .button:focus-visible {
   transform: translateY(-2px);
-  outline: none;
 }
 
 .button.primary {
@@ -352,6 +424,9 @@ p {
 .process-card,
 .specialty-card,
 .benefit-card,
+.indications-grid article,
+.trust-cards li,
+.about-section,
 .faq-list details,
 .contact-panel {
   border: 1px solid rgba(5, 43, 99, 0.08);
@@ -437,7 +512,8 @@ p {
 }
 
 .process-grid,
-.specialty-grid {
+.specialty-grid,
+.indications-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
@@ -479,6 +555,36 @@ p {
     var(--page);
 }
 
+.indications-section {
+  background: var(--page);
+}
+
+.indications-grid article {
+  display: grid;
+  gap: 14px;
+  min-height: 150px;
+  align-content: start;
+  padding: 24px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(234, 247, 251, 0.82));
+}
+
+.indications-grid span {
+  display: inline-grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 900;
+  background: var(--teal);
+  border-radius: 50%;
+}
+
+.indications-grid h3 {
+  margin: 0;
+}
+
 .specialty-card {
   display: grid;
   min-height: 250px;
@@ -506,13 +612,13 @@ p {
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
 
 .benefit-card {
   display: grid;
-  min-height: 245px;
+  min-height: 235px;
   align-content: center;
   justify-items: center;
   gap: 12px;
@@ -557,6 +663,90 @@ p {
   font-size: 0.9rem;
   line-height: 1.5;
   text-align: center;
+}
+
+.trust-section {
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.98), rgba(234, 247, 251, 0.9)),
+    var(--paper);
+}
+
+.trust-content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1fr);
+  gap: clamp(24px, 5vw, 70px);
+  align-items: center;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.trust-content p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.68;
+}
+
+.trust-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trust-cards li {
+  position: relative;
+  min-height: 112px;
+  padding: 24px 22px 22px 52px;
+  color: var(--navy);
+  font-weight: 900;
+  line-height: 1.35;
+  background: var(--paper);
+}
+
+.trust-cards li::before {
+  position: absolute;
+  left: 22px;
+  top: 24px;
+  color: var(--teal);
+  content: "✓";
+  font-weight: 900;
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: center;
+  max-width: 1120px;
+  margin: clamp(56px, 7vw, 88px) auto;
+  padding: clamp(26px, 4vw, 44px);
+  background: var(--paper);
+}
+
+.about-visual {
+  display: grid;
+  min-height: 260px;
+  place-items: center;
+  border: 1px dashed rgba(4, 133, 125, 0.24);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at center, rgba(217, 241, 238, 0.8), rgba(255, 255, 255, 0.9));
+}
+
+.about-visual img {
+  width: min(68%, 210px);
+  object-fit: contain;
+}
+
+.about-copy p:not(.eyebrow) {
+  max-width: 720px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  line-height: 1.65;
 }
 
 .benefit-card.featured p {
@@ -616,7 +806,7 @@ p {
 
 .contact-section {
   display: grid;
-  grid-template-columns: minmax(280px, 430px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 430px);
   gap: clamp(26px, 5vw, 72px);
   align-items: center;
   padding-top: clamp(44px, 5vw, 68px);
@@ -674,6 +864,8 @@ p {
   gap: 18px;
   padding: 28px;
   color: var(--ink);
+  width: 100%;
+  justify-self: end;
 }
 
 .contact-panel strong {
@@ -736,10 +928,10 @@ p {
   bottom: 18px;
   z-index: 30;
   display: none;
-  min-height: 46px;
+  min-height: 48px;
   align-items: center;
   justify-content: center;
-  padding: 12px 16px;
+  padding: 13px 18px;
   color: #fff;
   font-size: 0.9rem;
   font-weight: 900;
@@ -751,24 +943,68 @@ p {
 .floating-whatsapp:hover,
 .floating-whatsapp:focus-visible {
   background: var(--teal-dark);
-  outline: none;
 }
 
 @media (max-width: 1080px) {
   .benefits-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
 
-@media (max-width: 940px) {
   .site-header {
-    grid-template-columns: 1fr;
-    justify-items: start;
+    padding: 10px 18px;
+  }
+
+  .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    flex-direction: column;
   }
 
   .nav {
-    justify-content: flex-start;
+    position: absolute;
+    top: calc(100% + 1px);
+    right: 18px;
+    left: 18px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 18px;
+    border: 1px solid rgba(5, 43, 99, 0.1);
+    border-radius: 0 0 16px 16px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 22px 44px rgba(5, 43, 99, 0.14);
   }
+
+  .site-header.is-menu-open .nav {
+    display: flex;
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .nav-links a {
+    justify-content: flex-start;
+    min-height: 46px;
+    padding: 12px 10px;
+  }
+
+  .header-whatsapp {
+    width: 100%;
+    min-height: 48px;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 940px) {
 
   .hero,
   .contact-section {
@@ -780,7 +1016,10 @@ p {
   }
 
   .process-grid,
-  .specialty-grid {
+  .specialty-grid,
+  .indications-grid,
+  .trust-content,
+  .about-section {
     grid-template-columns: 1fr;
   }
 
@@ -791,7 +1030,8 @@ p {
 
 @media (max-width: 760px) {
   .intro-strip,
-  .benefits-grid {
+  .benefits-grid,
+  .trust-cards {
     grid-template-columns: 1fr;
   }
 
@@ -801,19 +1041,33 @@ p {
 }
 
 @media (max-width: 560px) {
+  body {
+    padding-bottom: 74px;
+  }
+
   .site-header {
-    position: static;
+    gap: 14px;
   }
 
   .brand {
-    align-items: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-logo {
+    width: 48px;
+    height: 48px;
   }
 
   .brand strong {
     white-space: normal;
+    font-size: 1rem;
   }
 
-  .header-whatsapp,
+  .brand small {
+    font-size: 0.58rem;
+  }
+
   .hero-actions,
   .button {
     width: 100%;
@@ -821,10 +1075,27 @@ p {
 
   .hero {
     padding-top: 28px;
+    padding-bottom: 42px;
   }
 
   h1 {
-    font-size: clamp(2rem, 10vw, 3rem);
+    font-size: clamp(2rem, 9vw, 2.85rem);
+    line-height: 1.06;
+  }
+
+  h2 {
+    font-size: clamp(1.55rem, 8vw, 2.35rem);
+  }
+
+  .section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .hero-subtitle {
+    margin-top: 18px;
+    font-size: 0.98rem;
+    line-height: 1.62;
   }
 
   .hero-visual {
@@ -842,11 +1113,32 @@ p {
   .intro-strip article,
   .process-card,
   .specialty-card,
-  .benefit-card {
+  .benefit-card,
+  .indications-grid article,
+  .trust-cards li {
     min-height: auto;
+  }
+
+  .about-section {
+    margin-top: 48px;
+    margin-bottom: 48px;
+    border-radius: 0;
+  }
+
+  .about-visual {
+    min-height: 200px;
+  }
+
+  .contact-section {
+    padding-bottom: 54px;
   }
 
   .floating-whatsapp {
     display: inline-flex;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    width: auto;
+    border-radius: 12px;
   }
 }
